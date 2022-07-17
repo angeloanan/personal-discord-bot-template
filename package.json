@@ -1,0 +1,39 @@
+{
+  "name": "personal-discord-bot-template",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Christopher Angelo <angelo@angeloanan.xyz>",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.0.0",
+    "@sapphire/discord-utilities": "^2.11.2",
+    "@sapphire/framework": "^3.0.0-next.a699d98.0",
+    "common-tags": "^1.8.2",
+    "discord.js": "^13",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@sapphire/ts-config": "^3.3.4",
+    "@types/common-tags": "^1.8.1",
+    "@types/node": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "discord-api-types": "^0.33.5",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "prisma": "^4.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "start": "node .",
+    "build": "tsc",
+    "dev": "nodemon --delay 5 -e ts,json --exec \"node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts\"",
+    "prepare": "husky install",
+    "lint": "eslint . --fix"
+  }
+}
