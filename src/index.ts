@@ -3,7 +3,7 @@ import 'dotenv/config'
 import { container, LogLevel, SapphireClient } from '@sapphire/framework'
 import { PrismaClient } from '@prisma/client'
 
-export class HajBotClient extends SapphireClient {
+export class BotClient extends SapphireClient {
   public constructor() {
     super({
       intents: ['GUILDS', 'GUILD_MESSAGES'],
@@ -56,7 +56,7 @@ declare module 'discord.js' {
   }
 }
 
-const client = new HajBotClient()
+const client = new BotClient()
 
 // Handle graceful exit
 process.on('SIGUSR2', () => {
