@@ -23,16 +23,16 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
-    "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
     "prisma": "^4.0.0",
     "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3",
     "typescript": "^4.7.4"
   },
   "scripts": {
     "start": "node .",
     "build": "tsc",
-    "dev": "nodemon --delay 5 -e ts,json --exec \"node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts\"",
+    "dev": "tsc-watch --onSuccess \"node --experimental-specifier-resolution=node .\"",
     "prepare": "husky install",
     "lint": "eslint . --fix"
   }
