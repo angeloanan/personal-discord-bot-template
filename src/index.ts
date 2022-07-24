@@ -1,7 +1,7 @@
 import 'dotenv/config'
 
 import { container, LogLevel, SapphireClient } from '@sapphire/framework'
-import { PrismaClient } from '@prisma/client'
+// import { PrismaClient } from '@prisma/client'
 
 export class BotClient extends SapphireClient {
   public constructor() {
@@ -23,26 +23,28 @@ export class BotClient extends SapphireClient {
   }
 
   public override async login(token?: string) {
-    container.logger.info('Connecting to database...')
-    container.database = new PrismaClient()
-    await container.database.$connect()
-    container.logger.info(`Connected to database.`)
+    // container.logger.info('Connecting to database...')
+    // container.database = new PrismaClient()
+    // await container.database.$connect()
+    // container.logger.info(`Connected to database.`)
     container.logger.info(`Bot logging in...`)
     return super.login(token)
   }
 
   public override async destroy() {
-    container.logger.info(`Disconnecting from database...`)
-    await container.database.$disconnect()
-    container.logger.info(`Disconnected from database.`)
+    // container.logger.info(`Disconnecting from database...`)
+    // await container.database.$disconnect()
+    // container.logger.info(`Disconnected from database.`)
     return super.destroy()
   }
 }
 
 // Module augmentation for container
 declare module '@sapphire/pieces' {
+  // Remove this when using custom container
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface Container {
-    database: PrismaClient
+    // database: PrismaClient
   }
 }
 
