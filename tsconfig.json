@@ -3,6 +3,10 @@
   "compilerOptions": {
     "target": "ESNext",
     "removeComments": true,
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/.tsbuildinfo"
+  },
+  "include": [
+    "src"
+  ],
 }
