@@ -1,8 +1,9 @@
 name: Publish Dev Docker Image to GitHub Packages
 on:
   push:
-    - 'main'
-    - 'releases/**'
+    branches:
+      - 'main'
+      - 'releases/**'
   workflow_dispatch:
 
 jobs:
