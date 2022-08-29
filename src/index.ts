@@ -50,11 +50,10 @@ declare module '@sapphire/pieces' {
 
 // Module augmentation for Discord
 declare module 'discord.js' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ClientEvents {
     // TODO: Augment custom events here
-    CustomEvent: {
-      param: unknown
-    }
+    // CustomEvent: {}
   }
 }
 
