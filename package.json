@@ -5,9 +5,9 @@
   "author": "Christopher Angelo <angelo@angeloanan.xyz>",
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^4.0.0",
-    "@sapphire/discord-utilities": "^2.11.2",
-    "@sapphire/framework": "^3.0.0-next.a699d98.0",
+    "@prisma/client": "^4.2.1",
+    "@sapphire/discord-utilities": "^2.11.6",
+    "@sapphire/framework": "^3.0.0",
     "common-tags": "^1.8.2",
     "discord.js": "^13",
     "dotenv": "^16.0.1"
@@ -15,19 +15,19 @@
   "devDependencies": {
     "@sapphire/ts-config": "^3.3.4",
     "@types/common-tags": "^1.8.1",
-    "@types/node": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
-    "discord-api-types": "^0.33.5",
-    "eslint": "^8.20.0",
+    "@types/node": "^18.7.13",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "discord-api-types": "^0.37.5",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
-    "prisma": "^4.0.0",
+    "prisma": "^4.2.1",
     "ts-node": "^10.9.1",
     "tsc-watch": "^5.0.3",
-    "typescript": "^4.7.4"
+    "typescript": "4.7"
   },
   "scripts": {
     "start": "node .",
