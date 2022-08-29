@@ -13,6 +13,7 @@
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@sapphire/ts-config": "^3.3.4",
     "@types/common-tags": "^1.8.1",
     "@types/node": "^18.7.13",
@@ -21,7 +22,9 @@
     "discord-api-types": "^0.37.5",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.15.0",
     "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "prisma": "^4.2.1",
