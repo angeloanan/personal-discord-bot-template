@@ -28,5 +28,7 @@ jobs:
           file: Dockerfile
           context: .
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ghcr.io/${{ github.repository }}:dev
