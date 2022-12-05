@@ -5,14 +5,14 @@
     "@typescript-eslint",
     "prettier",
     "sonarjs",
-    "optimize-regex"
+    "regexp"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:sonarjs/recommended",
-    "plugin:optimize-regex/recommended"
+    "plugin:regexp/recommended"
   ],
   "rules": {
     "prettier/prettier": "error"
