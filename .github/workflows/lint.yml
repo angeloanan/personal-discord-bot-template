@@ -19,18 +19,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node 18
+    - uses: pnpm/action-setup@v2
+      with:
+        version: latest
+
+      - name: Setup Node 19
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: yarn
-          cache-dependency-path: yarn.lock
+          node-version: 19
+          cache: pnpm
 
       - name: Installing dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Run ESLint
-        run: yarn eslint .
+        run: pnpm eslint .
           --config .eslintrc.json
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
