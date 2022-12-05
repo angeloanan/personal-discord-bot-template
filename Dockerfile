@@ -2,6 +2,7 @@
 FROM node:alpine AS base
 WORKDIR /app
 RUN apk update
+RUN apk --no-cache add curl
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 # Install dev-deps
