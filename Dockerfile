@@ -4,12 +4,13 @@ WORKDIR /app
 RUN apk update
 RUN apk --no-cache add curl
 RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+RUN pnpm fetch
 
 # Install dev-deps
 FROM base AS dev-deps
 COPY ./package.json ./package.json
 COPY ./pnpm-lock.yaml ./pnpm-lock.yaml
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --offline
 # Install build-essentials - https://github.com/mhart/alpine-node/issues/27#issuecomment-390187978
 # RUN apk add --no-cache --virtual .build-deps alpine-sdk python3 \
 #   && yarn install
