@@ -1,12 +1,13 @@
 import 'dotenv/config'
 
 import { container, LogLevel, SapphireClient } from '@sapphire/framework'
+import { ActivityType } from 'discord.js'
 // import { PrismaClient } from '@prisma/client'
 
 export class BotClient extends SapphireClient {
   public constructor() {
     super({
-      intents: ['GUILDS', 'GUILD_MESSAGES'],
+      intents: ['Guilds', 'GuildMessages'],
       allowedMentions: { parse: ['roles', 'users'] },
       presence: {
         afk: true,
@@ -14,7 +15,7 @@ export class BotClient extends SapphireClient {
         activities: [
           {
             name: 'for the ready signal',
-            type: 'WATCHING'
+            type: ActivityType.Watching
           }
         ]
       },
