@@ -36,7 +36,6 @@
     "start": "node .",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess \"node --experimental-specifier-resolution=node .\"",
-    "prepare": "husky install",
     "lint": "eslint . --fix"
   }
 }
