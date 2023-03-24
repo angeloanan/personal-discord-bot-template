@@ -20,7 +20,6 @@ specifiers:
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-regexp: ^1.13.0
   eslint-plugin-sonarjs: ^0.19.0
-  husky: ^8.0.3
   prettier: ^2.8.6
   prisma: ^4.11.0
   ts-node: ^10.9.1
@@ -49,7 +48,6 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_ose2zoovovx4ulolhifz3tfzx4
   eslint-plugin-regexp: 1.13.0_eslint@8.36.0
   eslint-plugin-sonarjs: 0.19.0_eslint@8.36.0
-  husky: 8.0.3
   prettier: 2.8.6
   prisma: 4.11.0
   ts-node: 10.9.1_om7tcubvwjpm3p7jgcpdbadnsi
@@ -1015,12 +1013,6 @@ packages:
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
-    dev: true
-
-  /husky/8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: true
 
   /ieee754/1.2.1:
