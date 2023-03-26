@@ -4,7 +4,8 @@
     "target": "ESNext",
     "removeComments": true,
     "outDir": "dist",
-    "tsBuildInfoFile": "dist/.tsbuildinfo"
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "skipDefaultLibCheck": true,
   },
   "include": [
     "src"

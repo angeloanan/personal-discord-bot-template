@@ -1,5 +1,5 @@
 import { Listener } from '@sapphire/framework'
-import type { Client } from 'discord.js'
+import { ActivityType, Client, OAuth2Scopes } from 'discord.js'
 
 export class ReadyListener extends Listener {
   public constructor(context: Listener.Context, options: Listener.Options) {
@@ -14,8 +14,8 @@ export class ReadyListener extends Listener {
     this.container.logger.info(`Successfully logged in as ${username} (${id})`)
 
     const inviteLink = client.generateInvite({
-      scopes: ['bot', 'applications.commands'],
-      permissions: ['ADMINISTRATOR']
+      scopes: [OAuth2Scopes.Bot, OAuth2Scopes.ApplicationsCommands],
+      permissions: ['Administrator']
     })
     this.container.logger.info(`Invite link: ${inviteLink}`)
 
@@ -25,7 +25,7 @@ export class ReadyListener extends Listener {
       activities: [
         {
           name: 'chat',
-          type: 'WATCHING'
+          type: ActivityType.Watching
         }
       ]
     })

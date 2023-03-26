@@ -2,8 +2,7 @@
 FROM node:18.15-alpine AS base
 WORKDIR /app
 RUN apk update
-RUN apk --no-cache add curl
-RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm config set node-linker hoisted
 COPY pnpm-lock.yaml package.json ./
 RUN pnpm fetch
