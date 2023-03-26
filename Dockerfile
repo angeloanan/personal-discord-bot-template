@@ -28,7 +28,6 @@ RUN find . -name node_modules | xargs rm -rf
 # From dev-deps, copy cache, re-"install" prod deps and generate Prisma schdema
 FROM base AS prod-deps
 RUN pnpm install --frozen-lockfile --production --offline
-RUN pnpm prisma generate
 
 # App stage
 FROM base as runner
