@@ -4,7 +4,7 @@ WORKDIR /app
 RUN apk update
 RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm config set node-linker hoisted
-COPY pnpm-lock.yaml package.json ./
+COPY prisma/schema.prisma pnpm-lock.yaml package.json ./
 RUN pnpm fetch
 
 # Install dev-deps
@@ -19,19 +19,16 @@ FROM dev-deps AS prisma-gen
 COPY ./prisma/schema.prisma ./prisma/schema.prisma
 RUN pnpm prisma generate
 
-# From dev-deps, copy cache, re-"install" prod deps and generate Prisma schdema
-FROM base AS prod-deps
-COPY --from=prisma-gen /app/${YARN_CACHE_FOLDER} /app/${YARN_CACHE_FOLDER}
-RUN pnpm install --frozen-lockfile --prod --offline
-# TODO: Double prisma gen call
-COPY ./prisma/schema.prisma ./prisma/schema.prisma
-RUN pnpm prisma generate
-
 # Copy dev-deps and source-code and build project
 FROM prisma-gen as builder
 COPY . .
 RUN pnpm build
 RUN find . -name node_modules | xargs rm -rf
+
+# From dev-deps, copy cache, re-"install" prod deps and generate Prisma schdema
+FROM base AS prod-deps
+RUN pnpm install --frozen-lockfile --production --offline
+RUN pnpm prisma generate
 
 # App stage
 FROM base as runner
