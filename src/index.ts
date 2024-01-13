@@ -61,22 +61,24 @@ declare module 'discord.js' {
 const client = new BotClient()
 
 // Handle graceful exit
-process.on('SIGUSR2', async () => {
+process.on('SIGUSR2', () => {
   console.log('[nodemon] restarting process, shutting down gracefully')
-  await client.destroy()
+  void client.destroy().then()
   process.exit()
 })
 
-process.on('SIGINT', async () => {
+process.on('SIGINT', () => {
   console.log('SIGINT received, shutting down gracefully')
-  await client.destroy()
+  void client.destroy().then()
   process.exit()
 })
 
-process.on('SIGTERM', async () => {
+process.on('SIGTERM', () => {
   console.log('SIGTERM received, shutting down gracefully')
-  await client.destroy()
+  void client.destroy().then()
   process.exit()
 })
 
-client.login(process.env.BOT_TOKEN).catch((e) => console.error(e))
+client.login(process.env.BOT_TOKEN).catch((e) => {
+  console.error(e)
+})

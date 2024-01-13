@@ -1,11 +1,15 @@
 {
-  "extends": "@sapphire/ts-config/extra-strict-without-decorators",
+  "extends": "@sapphire/ts-config/extra-strict",
   "compilerOptions": {
     "target": "ESNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "removeComments": true,
     "outDir": "dist",
     "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "composite": true,
     "skipDefaultLibCheck": true,
+    "strictNullChecks": true,
   },
   "include": [
     "src"
