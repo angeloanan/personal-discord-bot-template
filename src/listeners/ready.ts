@@ -2,7 +2,7 @@ import { Listener } from '@sapphire/framework'
 import { ActivityType, Client, OAuth2Scopes } from 'discord.js'
 
 export class ReadyListener extends Listener {
-  public constructor(context: Listener.Context, options: Listener.Options) {
+  public constructor(context: Listener.LoaderContext, options: Listener.Options) {
     super(context, {
       ...options,
       event: 'ready'
