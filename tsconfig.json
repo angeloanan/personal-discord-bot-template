@@ -9,7 +9,8 @@
     "tsBuildInfoFile": "dist/.tsbuildinfo",
     "composite": true,
     "skipDefaultLibCheck": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "skipLibCheck": true
   },
   "include": [
     "src",
