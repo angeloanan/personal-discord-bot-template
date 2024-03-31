@@ -31,6 +31,9 @@
     "start": "node .",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess \"node --experimental-specifier-resolution=node .\"",
-    "lint": "biome ci ."
+    "lint": "biome ci .",
+    "migrate": "drizzle-kit up:sqlite",
+    "push": "drizzle-kit push:sqlite",
+    "studio": "drizzle-kit studio"
   }
 }
