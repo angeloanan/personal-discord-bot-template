@@ -238,3 +238,5 @@ $RECYCLE.BIN/
 
 # CodeQL file
 *.sarif
+
+database.db

@@ -13,7 +13,6 @@ COPY . .
 RUN pnpm build
 RUN find . -name node_modules | xargs rm -rf
 
-# From dev-deps, copy cache, re-"install" prod deps and generate Prisma schdema
 FROM base AS prod-deps
 RUN pnpm install --frozen-lockfile --production --prefer-offline
 
@@ -21,5 +20,7 @@ RUN pnpm install --frozen-lockfile --production --prefer-offline
 FROM gcr.io/distroless/nodejs20-debian12 as runner
 COPY --from=prod-deps /app /app
 COPY --from=builder /app /app
+
+WORKDIR /app
 # CMD pnpm start
 CMD ["dist/index.js"]
